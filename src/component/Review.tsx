@@ -27,7 +27,7 @@ export default function Review<T extends React.FC>(): React.ReactElement {
     };
     const [comments, setComments] = useState<TComments>([]);
     const getComments = async function () {
-        const res = await fetch('http://localhost:8080/comments/get');
+        const res = await fetch('https://server-clining.onrender.com/comments/get');
         const json = await res.json() as TComments;
         setComments(prev => [...json]);
     }

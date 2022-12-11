@@ -27,7 +27,7 @@ export default function FeedbackModal<T extends React.FC>(props: IProps): React.
             setModalError(true);
             return;
         }
-        const res = await fetch('http://localhost:8080/comments/create', {
+        const res = await fetch('https://server-clining.onrender.com/comments/create', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

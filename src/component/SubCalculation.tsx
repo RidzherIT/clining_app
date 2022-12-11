@@ -27,7 +27,7 @@ export default function SubCalculation<T extends React.FC>(): React.ReactElement
             setModalError(true);
             return;
         }
-        const res = await fetch('http://localhost:8080/orders/create', {
+        const res = await fetch('https://server-clining.onrender.com/orders/create', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

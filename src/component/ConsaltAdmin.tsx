@@ -14,7 +14,7 @@ export default function ConsaltAdmin<T extends React.FC>(props: IProps): React.R
         const data = {
             id: id
         }
-        const res = await fetch('http://localhost:8080/request/update', {
+        const res = await fetch('https://server-clining.onrender.com/request/update', {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {

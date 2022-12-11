@@ -20,7 +20,7 @@ export default function Contacts<T extends React.FC>(): React.ReactElement {
             return;
         }
         console.log(data);
-        const res = await fetch('http://localhost:8080/request/create', {
+        const res = await fetch('https://server-clining.onrender.com/request/create', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

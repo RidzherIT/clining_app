@@ -36,13 +36,13 @@ export default function Admin<T extends React.FC>(): React.ReactElement {
     // CONSALT
     const [consalt, setConsalt] = useState<TConsalt>([]);
     const removeConsalt: () => void = async function () {
-        const res = await fetch('http://localhost:8080/request/delete', {
+        const res = await fetch('https://server-clining.onrender.com/request/delete', {
             method: 'DELETE'
         })
         setRender(!render);
     }
     const getConsalt = async function () {
-        const res = await fetch('http://localhost:8080/request/get');
+        const res = await fetch('https://server-clining.onrender.com/request/get');
         const json = await res.json() as TConsalt;
         setConsalt(prev => [...json]);
     }
@@ -52,7 +52,7 @@ export default function Admin<T extends React.FC>(): React.ReactElement {
     // ORDERS
     const [orders, setOrders] = useState<TOrders>([]);
     const getOrders = async function () {
-        const res = await fetch('http://localhost:8080/orders/get');
+        const res = await fetch('https://server-clining.onrender.com/orders/get');
         const json = await res.json() as TOrders;
         // Helper
         const accJson = json.map(elem => {
@@ -74,7 +74,7 @@ export default function Admin<T extends React.FC>(): React.ReactElement {
         setOrders(accJson as TOrders);
     }
     const deleteSuccessOrder: () => void = async function () {
-        const res = await fetch('http://localhost:8080/orders/delete', {
+        const res = await fetch('https://server-clining.onrender.com/orders/delete', {
             method: 'DELETE'
         })
         const json = await res.json() as TOrders;
@@ -84,7 +84,7 @@ export default function Admin<T extends React.FC>(): React.ReactElement {
         const data = {
             id: id
         }
-        const res = await fetch('http://localhost:8080/orders/update', {
+        const res = await fetch('https://server-clining.onrender.com/orders/update', {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
