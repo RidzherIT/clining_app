@@ -56,16 +56,19 @@
         text-align: center;
         margin: 0 auto;
     }
-    .our-works .slick-next{
+
+    .our-works .slick-next {
         right: 0;
         left: 70px;
         top: initial;
     }
-    .our-works .slick-prev{
+
+    .our-works .slick-prev {
         right: 70px;
         left: 0;
         top: initial;
     }
+
     .how-work__item--arrow::after,
     .how-work__item--arrow::before {
         background-image: url('../images/icons/arrow-smoll.svg');
@@ -233,14 +236,30 @@
         top: 0;
         left: 0;
         right: 0;
+        position: fixed;
         background-color: $accent;
         width: 100%;
         text-align: center;
         transform: translateX(-300%);
         transition: all .5s;
+        padding: 50px 0 50px 0;
+
+    }
+
+    .menu__show {
+        transform: translateX(0%);
     }
 
     .menu__list {
+        display: block !important;
+    }
+
+    .menu__list-item+.menu__list-item {
+        margin-top: 30px;
+    }
+
+    .menu__list-item a {
+        color: white;
         display: block !important;
     }
 
@@ -361,6 +380,10 @@
 
     .footer__list-item+.footer__list-item {
         margin-left: 20px;
+    }
+
+    .modal-review__input {
+        width: 300px;
     }
 }
 
@@ -491,6 +514,10 @@
 
     .contact__social {
         padding: 20px;
+    }
+
+    .modal-review__input {
+        width: 200px;
     }
 }
 

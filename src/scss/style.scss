@@ -1586,6 +1586,14 @@ body {
     z-index: 900;
 }
 
+
+
+
+
+
+
+
+
 .modal-notify,
 .modal-review {
     position: fixed;
@@ -1598,7 +1606,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #4A72FF;
-    width: max-content;
+    max-width: max-content;
     height: max-content;
     padding: 20px 30px;
     border-radius: 10px;
@@ -1643,6 +1651,18 @@ body {
     width: 20px;
     height: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ADMIN PANEL
 
@@ -1783,6 +1803,16 @@ body {
 
 .admin__order-text {
     color: #ffffff;
+}
+
+.menu__exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
 }
 
 @import 'media';

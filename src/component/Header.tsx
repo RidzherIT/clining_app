@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import telegramIcon from '../images/icons/telegram.svg';
 import whatsappIcon from '../images/icons/whatsapp.svg';
 import vkIcon from '../images/icons/vk.svg';
 import logoIcon from '../images/icons/logo.svg';
 import { Link } from "react-scroll";
 export default function Header<T extends React.FC>(): React.ReactElement {
-
+    const [showMenu, setShowMenu] = useState<boolean>(false);
     return (
         <>
             <header className="header" id="header">
@@ -38,7 +38,7 @@ export default function Header<T extends React.FC>(): React.ReactElement {
                             <a className="header__logo" href="#">
                                 <img src={logoIcon} alt="logo icon" />
                             </a>
-                            <nav className="menu">
+                            <nav className={`${showMenu && 'menu__show'} menu`}>
                                 <ul className="menu__list">
                                     <li className="menu__list-item menu__list-item--active">
                                         <Link to='header' smooth={true} duration={1000}>Главная</Link>
@@ -55,14 +55,14 @@ export default function Header<T extends React.FC>(): React.ReactElement {
                                     </li>
                                     <li className="menu__list-item">
                                         <Link to='contact' smooth={true} duration={1000}>Контакты</Link>
-
                                     </li>
                                 </ul>
+                                <div onClick={() => setShowMenu(!showMenu)} className="menu__exit">✖</div>
                             </nav>
                             <a className="header__bottom-phone" href="tel:+79185657536">
                                 +7 (918) 565-75-36
                             </a>
-                            <button className="menu__btn"></button>
+                            {!showMenu && <button onClick={() => setShowMenu(!showMenu)} className="menu__btn"></button>}
                         </div>
 
                     </div>

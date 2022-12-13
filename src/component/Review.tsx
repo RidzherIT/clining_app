@@ -67,7 +67,7 @@ export default function Review<T extends React.FC>(): React.ReactElement {
                                 )}
                             </Slider>
                         </div>
-                        <button className="header-content__btn review__comments-btn">Оставить отзыв</button>
+                        <button onClick={e => showModal(e)} className="header-content__btn review__comments-btn">Оставить отзыв</button>
                     </div>
                 </div>
             </section>
